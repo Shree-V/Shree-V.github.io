@@ -1,0 +1,68 @@
+body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: white;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+nav{
+    height: 50vh;
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
+    height:20px;
+    background-color: burlywood;
+}
+nav a{
+    display: inline-block;
+    display: inline;
+    width: 100px;
+    text-align: center;
+    text-decoration: none;
+    color: black;
+    font-size: medium;
+    transition: font-size 1s;
+}
+
+nav a:hover {
+    color: brown;
+    font-size: large;
+
+}
+
+img{
+    display: inline-block;
+}
+
+.resize {
+    width: 400px;
+    height: auto;
+}
+
+.resize2 {
+    width: 200px;
+    height: auto;
+}
+
+
+#desktopScreen{
+    background-color: brown;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+
+@media only screen and (min-width: 1500px) {
+    #desktopScreen{
+        background-color: darkgoldenrod;
+    }
+}
+
+@media only screen and (max-width: 400px) {
+    #desktopScreen{
+        background-color: burlywood;
+    }
+}
+

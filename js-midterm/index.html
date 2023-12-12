@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phone Number</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+<h1>Please enter your phone number...you'll get there eventually. Probably.</h1>
+
+<div id="container">
+    <div>
+      <p>Please enter your phone number:</p>
+      <p>
+        <span id="phone-number"></span>
+      </p>    
+    </div>
+  
+    <div>
+      <button id="decrease" onclick="displayDecrease()">Decrease</button>
+      <button id="increase" onclick="displayIncrease()">Increase</button>
+      <button id="enter">Enter</button>
+    </div>
+  
+  </div>
+  
+  <script src="main.js"></script>
+  <script>
+    //updateDisplay();
+    document.getElementById("phone-number").innerHTML = current;
+    function displayIncrease() {
+        increase();
+        //updateDisplay();
+        document.getElementById("phone-number").innerHTML = current;
+    }
+    function displayDecrease() {
+        decrease();
+        //updateDisplay();
+        document.getElementById("phone-number").innerHTML = current;
+    }
+  </script>
+
+</body>
+</html>

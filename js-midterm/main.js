@@ -18,8 +18,10 @@ const lowerLim = lower;
   
 //   $('#enter').click(enter);
 
-
+const height = document.documentElement.clientHeight;
+const width = document.documentElement.clientWidth;
 const button3 = document.querySelector('#enter').addEventListener('click', enter);
+const box = document.getElementById("container");
 
 function enter() {
   alert("You submitted: " + numberToString(current)); 
@@ -44,7 +46,15 @@ function updateDisplay() {
 }
 
 function decrease() {
-  upper = Number(current) - 1;
+  const num = Math.floor(Math.random() * (1000 - 1));
+  console.log(num);
+  if (Number(current) - num < Number(lowerLim)) {
+    upper = lowerLim;
+  } 
+  else {
+    upper = Number(current) - num;
+  }
+  
   if (upper >= lowerLim) {
     current = upper;
   }
@@ -61,7 +71,15 @@ function decrease() {
 }
 
 function increase() {
-  lower = Number(current) + 1; 
+  const num = Math.floor(Math.random() * (1000 - 1));
+  console.log(num);
+  if (Number(current) + num > Number(upperLim)) {
+    lower = upperLim;
+  } 
+  else {
+    lower = Number(current) + num; 
+  }
+  
   if (lower <= upperLim) {
     current = lower;
   }
@@ -78,3 +96,34 @@ function increase() {
    //updateDisplay(); 
 }   
 
+function randomPosition() {
+  let randY = Math.floor((Math.random() * height) + 1);
+  let randX = Math.floor((Math.random() * width) + 1);
+  box.style.transform = `translate(${randX}px, ${randY}px)`;
+  randomPosition();
+}
+
+// document.ready(function(){
+//   animateDiv('.container');
+// });
+
+// function makeNewPosition(){
+    
+//   // Get viewport dimensions (remove the dimension of the div)
+//   // var h = window.height() - 50;
+//   // var w = window.width() - 50;
+  
+//   var nh = Math.floor(Math.random() * height);
+//   var nw = Math.floor(Math.random() * width);
+  
+//   return [nh,nw];    
+  
+// }
+
+// function animateDiv(myclass){
+//   var newq = makeNewPosition();
+//   myclass.animate({ top: newq[0], left: newq[1] }, 1000,   function(){
+//     animateDiv(myclass);        
+//   });
+  
+// };

@@ -1,14 +1,89 @@
+@keyframes flashing {
+  0% {
+      background-color: #fff;
+      color: black;
+  }
+
+  100% {
+        background-color: black;
+        color: #fff;
+  }
+}
+
+@keyframes button_flash {
+  0% {
+    background-color: black;
+    color: white;
+    
+  }
+
+  100% {
+    background-color: white;
+    color: black;
+    
+  }
+}
+
+@keyframes bgcolor {
+  0% {
+      background-color: palevioletred
+  }
+
+  30% {
+      background-color: lightsalmon
+  }
+
+  60% {
+      background-color: lightgoldenrodyellow
+  }
+
+  90% {
+      background-color: lightgreen
+  }
+
+  100% {
+      background-color: lightblue
+  }
+}
+
 #container {
-    margin: 10px; 
-    border: 5px solid purple; 
-    background-color: plum; 
-    color: #fff; 
+    --div-width: 400px;
+    position: absolute;
+    margin: 100px; 
+    -webkit-animation: flashing 0.5s infinite;
+    animation: flashing 0.2s infinite;
+    -webkit-animation-direction: alternate;
+    animation-direction: alternate;
+    transition: 0.5s transform;
     font-weight: bold; 
-    padding-bottom: 10px; 
+    padding-bottom: 10px;
+    padding-top: 10px;
+    padding-left: 10px;
+    padding-right: 10px; 
     display: inline-block; 
     font-size: 16pt; 
+    text-align: center;
+    top: 0;  
+    width: var(--div-width);
   }
   
   button {
     font-size: 12pt; 
+    background-color: black;
+    color: white;
+    -webkit-animation: button_flash 0.5s infinite;
+    animation: button_flash 0.2s infinite;
+    -webkit-animation-direction: alternate;
+    animation-direction: alternate;
   }
+
+
+
+
+body {
+    -webkit-animation: bgcolor 1.25s infinite;
+    animation: bgcolor 0.625s infinite;
+    -webkit-animation-direction: alternate;
+    animation-direction: alternate;
+} 
+

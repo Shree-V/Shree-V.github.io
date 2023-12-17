@@ -11,15 +11,10 @@ var extrazeros = 0;
 const upperLim = upper;
 const lowerLim = lower;
 
-// $(document).ready(function() {
-  
-//   $('#decrease').click(decrease);
-//   $('#increase').click(increase);
-  
-//   $('#enter').click(enter);
-
 const height = document.documentElement.clientHeight;
 const width = document.documentElement.clientWidth;
+const containerHeight = document.getElementById('container').offsetHeight;
+const containerWidth = document.getElementById('container').offsetWidth;
 const button3 = document.querySelector('#enter').addEventListener('click', enter);
 const box = document.getElementById("container");
 
@@ -42,7 +37,6 @@ function numberToString(p) {
 function updateDisplay() {
 //   current = Math.floor((upper + lower) / 2); 
     phonestring = numberToString(current);
-//   $("#phone-number").html(numberToString(current)); 
 }
 
 function decrease() {
@@ -96,11 +90,22 @@ function increase() {
    //updateDisplay(); 
 }   
 
+function randomY() {
+  min = Math.ceil(0);
+  max = Math.floor(height - containerHeight);
+  return Math.floor(Math.random() * (max - min) + min);
+}
+
+function randomX() {
+  min = Math.ceil(0);
+  max = Math.floor(width - containerWidth);
+  return Math.floor(Math.random() * (max - min) + min);
+}
+
 function randomPosition() {
-  let randY = Math.floor((Math.random() * height) + 1);
-  let randX = Math.floor((Math.random() * width) + 1);
+  let randY = randomY();
+  let randX = randomX();
   box.style.transform = `translate(${randX}px, ${randY}px)`;
-  randomPosition();
 }
 
 // document.ready(function(){

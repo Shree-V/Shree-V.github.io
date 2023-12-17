@@ -31,6 +31,12 @@
   <script>
     //updateDisplay();
     document.getElementById("phone-number").innerHTML = current;
+    setInterval(
+    function(){
+      randomPosition();
+      },
+      1000  
+    );
     function displayIncrease() {
         increase();
         //updateDisplay();

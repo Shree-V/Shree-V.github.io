@@ -43,6 +43,32 @@ while True:
         if event.type == QUIT:
             pygame.quit()
             sys.exit()
+        if event.type == KEYDOWN:
+            if event.key == K_LEFT or event.key == K_a:
+                moveRight = False
+                moveLeft = True
+            if event.key == K_RIGHT or event.key == K_d:
+                moveRight = True
+                moveLeft = False
+            if event.key == K_UP or event.key == K_w:
+                moveDown = False
+                moveUp = True
+            if event.key == K_DOWN or event.key == K_s:
+                moveDown = True
+                moveUp = False
             
+   # draw white background on surface 
+   windowSurface.fill(WHITE)
+
+    #move the player
+    if moveDown and player.bottom < WINDOWHEIGHT:
+        player.top += MOVESPEED
+    if moveUp and player.top > 0:
+        player.top -= MOVESPEED
+    if moveLeft and player.left > 0:
+        player.left -= MOVESPEED
+    if moveRight and player.right < WINDOWWIDTH:
+        player.right += MOVESPEED
+
     #draw the window on the screen
     pygame.display.update()
